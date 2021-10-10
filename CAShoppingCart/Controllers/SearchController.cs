@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace CAShoppingCart.Controllers
 {
-    public class ProductController : Controller
+    public class SearchController : Controller
     {
         private ShopContext shopContext;
-        public ProductController(ShopContext shopContext)
+        public SearchController(ShopContext shopContext)
         {
             this.shopContext = shopContext;
         }
 
-        public IActionResult AllProducts(string searchStr)
+        public IActionResult Index(string searchStr)
         {
-            //check session id here
-
-            //if no search string will just list all products
             if (searchStr == null)
             {
                 searchStr = "";

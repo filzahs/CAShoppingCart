@@ -1,0 +1,43 @@
+﻿@{ ViewData["Title"] = "Search Products";
+    string searchStr = (string)ViewData["searchStr"];
+    List<Product> products = (List<Product>)ViewData["products"]; 
+}
+
+<div class="search">
+    <form action="/Search/" method="POST">
+        <input class="search-input" name="searchStr" type="text" onfocus="this.value=''" value="Search" />
+    </form>
+</div>
+
+@if (products.Count == 0) {
+    @:No product found.
+}
+else { 
+<div class="productlist" style="display:inline-block">
+    @{ foreach (Product item in products)
+        {
+            string img = item.ImageFile;
+            string name = item.ProductName;
+            string desc = item.Desc;
+            float price = item.Price;
+
+        <div class="a-product">
+            <div>
+                <img class="product-img" src="\Images\@img" alt="Alternate Text" />
+            </div>
+            <div>
+                <p class="product-name">@name</p>
+            </div>
+            <div>
+                <p class="product-desc">@desc</p>
+            </div>
+            <div>
+                <p class="product-price">$@price</p>
+            </div>
+            <div>
+                <button class="button">ADD TO CART</button>
+            </div>
+        </div>
+    } }
+</div>}
+

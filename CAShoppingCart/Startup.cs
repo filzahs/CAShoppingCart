@@ -1,6 +1,9 @@
+using CAShoppingCart.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,10 +27,17 @@ namespace CAShoppingCart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // add our database context into DI container
+            services.AddDbContext<ShopContext>(opt =>
+                opt.UseLazyLoadingProxies().UseSqlServer(
+                    Configuration.GetConnectionString("db_conn"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            [FromServices] ShopContext shopContext)
         {
             if (env.IsDevelopment())
             {
@@ -50,8 +60,16 @@ namespace CAShoppingCart
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Product}/{action=AllProducts}/{id?}");
+                    pattern: "{controller=Search}/{action=Index}/{id?}");
             });
+
+            if (!shopContext.Database.CanConnect())
+            {
+                shopContext.Database.EnsureCreated();
+
+                SeedDB db = new SeedDB(shopContext);
+                db.Seed();
+            }
         }
     }
 }
