@@ -5,48 +5,128 @@
 @{
 }
 
-<div style="text-align:center">
-    <div class="productlist" style="display:inline-block">
-        <!--can use the foreach loop here-->
-        <div class="a-product">
-            <div class="a-product-img">Product Image</div>
-            <div class="a-product-name">Product Name</div>
-            <div class="a-product-desc">Description</div>
-            <div class="a-product-price"><b>Price:</b> $500</div>
-            <div class="btn-AddToCart">Add to cart button</div>
-        </div>
+<div class="search">
+    <form action="/Search/" method="POST">
+        <input class="search-input" name="searchStr" value="enter search here" />
+    </form>
+</div>
 
-        <div class="a-product">
-            <div class="a-product-img">Product Image</div>
-            <div class="a-product-name">Product Name</div>
-            <div class="a-product-desc">Description</div>
-            <div class="a-product-price"><b>Price:</b> $500</div>
-            <div class="btn-AddToCart">Add to cart button</div>
-        </div>
 
-        <div class="a-product">
-            <div class="a-product-img">Product Image</div>
-            <div class="a-product-name">Product Name</div>
-            <div class="a-product-desc">Description</div>
-            <div class="a-product-price"><b>Price:</b> $500</div>
-            <div class="btn-AddToCart">Add to cart button</div>
+<div class="productlist" style="display:inline-block">
+    <!--can use the foreach loop here-->
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\charts.png" alt="Alternate Text" />
         </div>
+        <div>
+            <p class="product-name">.NET Charts</p>
+        </div>
+        <div>
+            <p class="product-desc">Brings powerful charting capabilities to your .NET applications</p>
+        </div>
+        <div>
+            <p class="product-price">$99</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
 
-        <div class="a-product">
-            <div class="a-product-img">Product Image</div>
-            <div class="a-product-name">Product Name</div>
-            <div class="a-product-desc">Description</div>
-            <div class="a-product-price"><b>Price:</b> $500</div>
-            <div class="btn-AddToCart">Add to cart button</div>
         </div>
-
-        <div class="a-product">
-            <div class="a-product-img">Product Image</div>
-            <div class="a-product-name">Product Name</div>
-            <div class="a-product-desc">Description</div>
-            <div class="a-product-price"><b>Price:</b> $500</div>
-            <div class="btn-AddToCart">Add to cart button</div>
-        </div>
-        <!--close the foreach loop-->
     </div>
+
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\paypal.png" alt=".NET Paypal" />
+        </div>
+        <div>
+            <p class="product-name">.NET PayPal</p>
+        </div>
+        <div>
+            <p class="product-desc">Integrate your .NET apps with PayPal the easy way!</p>
+        </div>
+        <div>
+            <p class="product-price">$69</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
+
+        </div>
+    </div>
+
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\ml.png" alt=".NET ML" />
+        </div>
+        <div>
+            <p class="product-name">.NET ML</p>
+        </div>
+        <div>
+            <p class="product-desc">Supercharged .NET machine learning libraries.</p>
+        </div>
+        <div>
+            <p class="product-price">$299</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
+
+        </div>
+    </div>
+
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\analytics.png" alt=".NET Analytics" />
+        </div>
+        <div>
+            <p class="product-name">.NET Analytics</p>
+        </div>
+        <div>
+            <p class="product-desc">Perform data mining and analytics easily in .NET.</p>
+        </div>
+        <div>
+            <p class="product-price">$299</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
+
+        </div>
+    </div>
+
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\logger.png" alt=".NET Logger" />
+        </div>
+        <div>
+            <p class="product-name">.NET Logger</p>
+        </div>
+        <div>
+            <p class="product-desc">Logs and aggregates events easily in your.NET apps.</p>
+        </div>
+        <div>
+            <p class="product-price">$49</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
+
+        </div>
+    </div>
+
+    <div class="a-product">
+        <div>
+            <img class="product-img" src="\Images\Numerics.png" alt=".NET Numerics" />
+        </div>
+        <div>
+            <p class="product-name">.NET Numerics</p>
+        </div>
+        <div>
+            <p class="product-desc">Powerful numerical methods for your .NET simulations.</p>
+        </div>
+        <div>
+            <p class="product-price">$199</p>
+        </div>
+        <div>
+            <button class="button">ADD TO CART</button>
+
+        </div>
+    </div>
+
+    <!--close the foreach loop-->
 </div>
