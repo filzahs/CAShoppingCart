@@ -14,5 +14,7 @@ namespace CAShoppingCart.Models
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Session> Sessions { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

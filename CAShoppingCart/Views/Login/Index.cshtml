@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form action="/Login/Login" method="POST">
+    <div style="text-align:center">
+        <div class="a-product">
+            <div class="my_row">
+                <div class="my_cell">
+                    Username:
+                </div>
+                <div class="my_cell">
+                    <input id="username" name="username" />
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell">
+                    Password:
+                </div>
+                <div class="my_cell">
+                    <input type="password" id="password" name="password" />
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell"></div>
+                <div class="my_cell" style="text-align: right">
+                    <a class="btn btn-primary" asp-controller="Login" asp-action="NewUser">New User</a>
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

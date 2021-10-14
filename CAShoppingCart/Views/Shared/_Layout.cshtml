@@ -11,47 +11,56 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Search" asp-action="Index">LOGO</a>
+                @if (Context.Request.Cookies["SessionId"] != null)
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Search" asp-action="Index">HOME</a>
+
+                }
+                else
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Login" asp-action="Index">LOGIN</a>
+
+                }
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!--Nav bar left side-->
-                <div class="left-links">
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <!--check cookie here-->
-                            <!--check username from cookie here-->
-                            <li class="nav-item nav-link">Hello, ["Username"]</li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">My Purchases</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Log Out</a>
-                            </li>
-                            <!--close check cookie-->
-                        </ul>
+                @if (Context.Request.Cookies["SessionId"] != null)
+                {
+                    <!--Nav bar left side-->
+                    <div class="left-links">
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item nav-link">Hello, ["Username"]</li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">My Purchases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Logout" asp-action="Index">Log Out</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-                <!--Nav bar right side-->
-                <div class="right-links">
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                                    <img src="/Images/cart.png" alt="Cart" />
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark">[2]</a>
-                            </li>
-                        </ul>
+                    <!--Nav bar right side-->
+                    <div class="right-links">
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">
+                                        <img src="/Images/cart.png" alt="Cart icon" />
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark">[2]</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                }
 
-            </div>
+                </div>
         </nav>
     </header>
     <div class="container">
@@ -69,7 +78,7 @@
             <div class="footer-right-links">
                 <a href="web.whatsapp.com"><img src="/Images/wa.png" alt="Whatsapp icon" /></a>
                 <a href="facebook.com"><img src="/Images/fb.png" alt="Facebook icon" /></a>
-                <a href="mailto:"><img src="/Images/email.png" alt="Instagram icon" /></a>
+                <a href="mailto:"><img src="/Images/email.png" alt="Email icon" /></a>
             </div>
         </div>
 

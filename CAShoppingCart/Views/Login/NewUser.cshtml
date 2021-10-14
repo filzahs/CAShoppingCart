@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@section Scripts {
+    <script src="~/js/Register.js"></script>
+}
+
+<form action="/Login/Register" method="POST">
+    <div style="text-align:center">
+        <div class="a-product">
+            <div class="my_row">
+                <div class="my_cell">
+                    Username:
+                </div>
+                <div class="my_cell">
+                    <input id="username" name="username" required/>
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell">
+                    Password:
+                </div>
+                <div class="my_cell">
+                    <input type="password" id="password" name="password" required />
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell">
+                    Email:
+                </div>
+                <div class="my_cell">
+                    <input type="email" id="email" name="email" />
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell">
+                    Name:
+                </div>
+                <div class="my_cell">
+                    <input id="name" name="name" required />
+                </div>
+            </div>
+            <div class="my_row">
+                <div class="my_cell"></div>
+                <div class="my_cell" style="text-align: right">
+                    <input type="submit" value="Register" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

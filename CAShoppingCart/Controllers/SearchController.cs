@@ -23,7 +23,7 @@ namespace CAShoppingCart.Controllers
             }
 
             List<Product> products = shopContext.Products.Where(x =>
-                x.ProductName.Contains(searchStr)
+                x.ProductName.Contains(searchStr) || x.Desc.Contains(searchStr)
             ).ToList();
 
             //what does this lines do?

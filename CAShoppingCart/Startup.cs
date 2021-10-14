@@ -60,15 +60,16 @@ namespace CAShoppingCart
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Search}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
 
             if (!shopContext.Database.CanConnect())
             {
                 shopContext.Database.EnsureCreated();
 
-                SeedDB db = new SeedDB(shopContext);
-                db.Seed();
+                //this two lines must go together
+                /*SeedDB db = new SeedDB(shopContext);
+                db.Seed();*/
             }
         }
     }
